@@ -1,8 +1,5 @@
 import time
 import unittest
-
-from driver import driver
-from selenium import webdriver
 from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
@@ -47,9 +44,9 @@ class InputFormsCheck(unittest.TestCase):
         time.sleep(10)
         driver.close()
 
-        # Closing the browser.
-        def tearDown(self):
-            driver.close()
+    # Closing the browser
+    def tearDown(self):
+        self.driver.quit()
 
 
 # This line sets the variable “__name__” to have a value “__main__”.
