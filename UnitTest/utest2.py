@@ -90,7 +90,6 @@ class ForgotPass(unittest.TestCase):
         print("You are successfully logged Out")
         time.sleep(3)
 
-
     def tearDown(self):
         self.driver.quit()
 
