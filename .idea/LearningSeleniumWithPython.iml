@@ -10,5 +10,7 @@
     <orderEntry type="module" module-name="Namespace" />
     <orderEntry type="module" module-name="KloverCloud" />
     <orderEntry type="module" module-name="KloverCloud2" />
+    <orderEntry type="module" module-name="pythonpractice" />
+    <orderEntry type="module" module-name="PythonPOM" />
   </component>
 </module>
