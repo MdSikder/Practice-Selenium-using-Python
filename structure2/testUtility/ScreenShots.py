@@ -1,9 +1,9 @@
-__author__ = 'Aditya Roy'
+
 
 from selenium import webdriver
 
 
-class SS(object):
+class SS:
 
     def __init__(self, driver):
         self.driver = driver
