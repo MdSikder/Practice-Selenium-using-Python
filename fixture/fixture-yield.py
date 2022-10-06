@@ -9,6 +9,7 @@ def setUp():
 
     print("after run all test")
 
+
 def test_methodA(setUp):
     print("A is running to test")
 

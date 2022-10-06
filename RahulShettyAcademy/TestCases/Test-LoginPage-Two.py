@@ -21,8 +21,21 @@ class Test1(EnvironmentSetup):
 
         main = Main(driver)
 
-        main.UserNameBar.send_keys('porag')
-        time.sleep(2)
+        try:
+            if main.UserNameBar.send_keys('porag'):
+                print("Successfully inputted name")
+
+            # self.assertEqual(driver.title,expected_title)
+            else:
+                print("Mercury Logo not Displayed")
+
+        except Exception as e:
+            print(e + "Inputted failed")
+
+        time.sleep(5)
+
+
+"""
         main.PasswordBar.send_keys('123!@')
         time.sleep(2)
         main.SingInButton.click()
@@ -57,4 +70,4 @@ class Test1(EnvironmentSetup):
         main.SingInButton.click()
         self.driver.implicitly_wait(5)
         time.sleep(5)
-        print("LogIn Successfully")
+"""
