@@ -6,6 +6,9 @@ from structure3.PageObject.POMTC002 import Main
 
 from structure3.PageObject.Locators import Locator
 from structure3.Base.EnvironmentSetup import EnvironmentSetup
+from structure3.screenShots.screenShots import SS
+
+ss_path = "/TC002/"
 
 
 class Test1(EnvironmentSetup):
@@ -24,3 +27,5 @@ class Test1(EnvironmentSetup):
 
         main.Visit_Us.click()
         time.sleep(2)
+        ss = SS(driver)
+        ss.ScreenShot(ss_path + "UserName")

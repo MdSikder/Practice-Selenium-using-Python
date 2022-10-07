@@ -1,5 +1,6 @@
 import time
 
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 from structure3.PageObject.POMTC002 import Main
@@ -8,6 +9,11 @@ from structure3.PageObject.Locators import Locator
 from RahulShettyAcademy.Base.EnvironmentSetup import EnvironmentSetup
 from RahulShettyAcademy.PageObjectModel.PomLogIn import Main
 from RahulShettyAcademy.PageObjectModel.PomForgotPassword import ForgotPass
+
+
+def capture_screenshot(d, path):
+    file_name = path + "scrrenshot_" + time.asctime().replace(":", "_") + ".png"
+    d.save_screenshot(file_name)
 
 
 class Test1(EnvironmentSetup):
@@ -58,3 +64,4 @@ class Test1(EnvironmentSetup):
         self.driver.implicitly_wait(5)
         time.sleep(5)
         print("LogIn Successfully")
+        capture_screenshot(driver, "./loc/")
