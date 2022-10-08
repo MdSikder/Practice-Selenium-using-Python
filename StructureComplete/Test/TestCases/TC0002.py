@@ -10,7 +10,7 @@ from StructureComplete.Base.EnvironmentSetup import EnvironmentSetup
 ss_path = "/TC0002/"
 
 
-class Test1(EnvironmentSetup):
+class Test2(EnvironmentSetup):
 
     def test1(self):
         pageUrl = "https://rahulshettyacademy.com/locatorspractice/"
@@ -21,13 +21,13 @@ class Test1(EnvironmentSetup):
 
         main = Main(driver)
 
-        main.User_Name.send_keys('mayabi')
+        main.User_Name.send_keys('Test-2-Check')
         time.sleep(3)
 
         main.Visit_Us.click()
         time.sleep(2)
         ss = SS(driver)
 
-        file_name = ss_path + "scrrenshot_" + time.asctime().replace(":", "_") + ".png"
+        file_name = ss_path + "Test-2_scrrenshot_" + time.asctime().replace(":", "_") + ".png"
         ss.driver.save_screenshot(file_name)
         ss.ScreenShot(file_name)
