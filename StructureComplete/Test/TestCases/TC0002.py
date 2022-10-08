@@ -3,12 +3,11 @@ import time
 from selenium.webdriver.common.by import By
 
 from structure3.PageObject.POMTC002 import Main
+from StructureComplete.POM.Pages.POMTC0002 import Main
+from StructureComplete.Test.TestUtility.screenShot import SS
+from StructureComplete.Base.EnvironmentSetup import EnvironmentSetup
 
-from structure3.PageObject.Locators import Locator
-from structure3.Base.EnvironmentSetup import EnvironmentSetup
-from structure3.screenShots.screenShots import SS
-
-ss_path = "/TC002/"
+ss_path = "/TC0002/"
 
 
 class Test1(EnvironmentSetup):
@@ -28,4 +27,7 @@ class Test1(EnvironmentSetup):
         main.Visit_Us.click()
         time.sleep(2)
         ss = SS(driver)
-        ss.ScreenShot(ss_path + "UserName.png")
+
+        file_name = ss_path + "scrrenshot_" + time.asctime().replace(":", "_") + ".png"
+        ss.driver.save_screenshot(file_name)
+        ss.ScreenShot(file_name)
