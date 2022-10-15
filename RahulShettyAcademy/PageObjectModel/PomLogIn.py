@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
-from RahulShettyAcademy.Locators.Locators import Locator
+from Selenium_based_mini_projects_using_Python.RahulShettyAcademy.Src.locators.locators import Locator
 
 
-class Main(object):
+class LoginPage(object):
     def __init__(self, driver):
         self.driver = driver
 
