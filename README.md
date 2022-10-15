@@ -1,3 +1,3 @@
 # LearningSeleniumWithPython
-Selenium learning with Python.
+Practice Selenium Using Python
 1.ChromeSetup
