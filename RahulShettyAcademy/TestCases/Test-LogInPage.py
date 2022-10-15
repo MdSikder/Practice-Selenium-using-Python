@@ -3,7 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from structure3.PageObject.POMTC002 import Main
+from Practice_Selenium_Using_Python.structure3.PageObject.POMTC002 import Main
 
 from structure3.PageObject.Locators import Locator
 from RahulShettyAcademy.Base.EnvironmentSetup import EnvironmentSetup

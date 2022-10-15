@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from structure3.PageObject.Locators import Locator
+from Practice_Selenium_Using_Python.structure3.PageObject.Locators import Locator
 
 
 class Main(object):

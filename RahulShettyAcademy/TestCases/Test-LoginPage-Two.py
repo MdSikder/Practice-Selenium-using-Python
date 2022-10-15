@@ -1,13 +1,14 @@
+
 import time
 
 from selenium.webdriver.common.by import By
 
-from structure3.PageObject.POMTC002 import Main
+from Practice_Selenium_Using_Python.structure3.PageObject.POMTC002 import Main
 
-from structure3.PageObject.Locators import Locator
-from RahulShettyAcademy.Base.EnvironmentSetup import EnvironmentSetup
-from RahulShettyAcademy.PageObjectModel.PomLogIn import Main
-from RahulShettyAcademy.PageObjectModel.PomForgotPassword import ForgotPass
+from Practice_Selenium_Using_Python.structure3.PageObject.Locators import Locator
+#from Practice_Selenium_Using_Python.structure3.RahulShettyAcademy.Base.EnvironmentSetup import EnvironmentSetup
+from Practice_Selenium_Using_Python.structure3.RahulShettyAcademy.PageObjectModel.PomLogIn import Main
+from Practice_Selenium_Using_Python.structure3.RahulShettyAcademy.PageObjectModel.PomForgotPassword import ForgotPass
 
 
 class Test1(EnvironmentSetup):

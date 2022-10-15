@@ -3,7 +3,8 @@ import time
 from selenium.webdriver import Keys
 
 from Structure.Base import EnvironmentSetup
-from Structure.PageObjectModel import Locator
+from Practice_Selenium_Using_Python.Structure.Base import EnvironmentSetup
+from Practice_Selenium_Using_Python.Structure.PageObjectModel import Locator
 
 from selenium.webdriver.common.by import By
 from Structure.screenShot import SS
