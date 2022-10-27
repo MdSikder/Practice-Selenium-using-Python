@@ -1,3 +1,13 @@
+"""operations on cookies
+
+capture all cookies from browser
+count number of cookies
+read cookie pairs
+adding new cookies
+deleting specific cookie by using name of cookie
+seleting all the cookies"""
+
+
 from selenium import webdriver
 
 driver = webdriver.Chrome()
