@@ -2,9 +2,13 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.service import Service
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
-driver = webdriver.Chrome()
+from cookies.login.login import save_cookies
 
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.get("https://eks.rakibefstestmaincluster782.klovercloud.io/")
 driver.maximize_window()
 
@@ -42,5 +46,7 @@ print("Welcome to dashboard")
 cookies = driver.get_cookies()
 print(len(cookies))  # print number of cookies has been created
 print(cookies)  # print all the cookie pairs
-
+cookies_location = "C:/Users/User/PycharmProjects/Practice_Selenium_Using_Python/cookies/login/cookies.txt"
+driver.save_cookies
+save_cookies(driver, cookies_location)
 driver.close()
