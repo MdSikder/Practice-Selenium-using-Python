@@ -38,7 +38,7 @@ def highlight(element):
 
     original_style = element.get_attribute('style')
     apply_style("border: 2px solid yellow;")
-    time.sleep(.3)
+    time.sleep(1)
     apply_style(original_style)
 
 
