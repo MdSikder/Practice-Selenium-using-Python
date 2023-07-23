@@ -8,21 +8,35 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 
+# ---------------------------------your info------------------ #
 my_message = 'hello how are you'
 UploadFilePath = "C:\\Users\\KloverCloud\\Desktop\\files\\qw.jpg"
+group_url = "https://www.facebook.com/groups/353266859276449/members"
 
+# ---------------------auth info------------------ #
+chrome_profile_path = 'user-data-dir=C:\\Users\\KloverCloud\\AppData\\Local\\Programs\\Python\\Python37-32\\chromedriver_win32\\chromeprofile'
+chrome_driver_path = "C:\\Users\\KloverCloud\\AppData\\Local\\Programs\\Python\\Python37-32\\chromedriver_win32\\chromedriver.exe"
+path = "C:\\Users\\KloverCloud\\PycharmProjects\\Practice_Selenium_Using_Python\\Facebook_bot\\excel\\hello.xlsx"
+
+# ---------------------start------------------ #
 chrome_options = Options()
 chrome_options.add_argument("--remote-debugging-port=9222")
-chrome_options.add_argument(
-    'user-data-dir=C:\\Users\\KloverCloud\\AppData\\Local\\Programs\\Python\\Python37-32\\chromedriver_win32\\chromeprofile')
-chrome_driver = "C:\\Users\\KloverCloud\\AppData\\Local\\Programs\\Python\\Python37-32\\chromedriver_win32\\chromedriver.exe"
+chrome_options.add_argument(chrome_profile_path)
+chrome_driver = chrome_driver_path
 driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
-path = "C:\\Users\\KloverCloud\\PycharmProjects\\Practice_Selenium_Using_Python\\Facebook_bot\\excel\\hello.xlsx"
-url = "https://www.facebook.com/groups/353266859276449/members"
 
-driver.get("https://www.facebook.com/groups/353266859276449/members")  # Click on the "Members" tab
-time.sleep(5)
+# ---------------------Locators------------------ #
+search = driver.find_element_by_xpath(
+    "//*[@id='mount_0_0_bu']/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div/div[2]/div/div/div[4]/div/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div/div[2]/span/span/div/label/input")
+message = driver.find_element_by_xpath("//span[contains(text(),'Message')]")
 members_tab = driver.find_element_by_link_text('People')
+
+# ---------------------end------------------ #
+
+url = group_url
+driver.get(url)  # Click on the "Members" tab
+time.sleep(5)
+
 members_tab.click()
 time.sleep(5)
 
@@ -33,9 +47,6 @@ for r in range(2, rows + 1):
     useremail = XLutils.readData(path, 'Sheet1', r, 1)
     password = XLutils.readData(path, 'Sheet1', r, 2)
     exp = XLutils.readData(path, 'Sheet1', r, 3)
-
-    search = driver.find_element_by_xpath(
-        "//*[@id='mount_0_0_bu']/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div/div[2]/div/div/div[4]/div/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div/div[2]/span/span/div/label/input")
     search.send_keys(useremail)
     time.sleep(3)
     actions = ActionChains(driver)
@@ -50,7 +61,6 @@ for r in range(2, rows + 1):
     # actions.move_to_element(user).perform()
     # time.sleep(3)
 
-    message = driver.find_element_by_xpath("//span[contains(text(),'Message')]")
     message.click()
     time.sleep(4)
 
@@ -70,22 +80,13 @@ for r in range(2, rows + 1):
     actions.send_keys(Keys.ENTER)
     time.sleep(3)
 
-    selectfrom_Computer = driver.find_element_by_xpath("")
-    driver.find_element(By.XPATH, selectfrom_Computer).click()
-    time.sleep(5)
+    # selectfrom_Computer = driver.find_element_by_xpath("")
+    # driver.find_element(By.XPATH, selectfrom_Computer).click()
+    # time.sleep(5)
 
     pyautogui.typewrite(UploadFilePath)
     time.sleep(2)
-
     pyautogui.press('enter')
     time.sleep(3)
     pyautogui.press('enter')
     time.sleep(50)
-
-    # try:
-    #     pyautogui.press('tab')
-    #     time.sleep(1)
-    #     pyautogui.press('enter')
-    #     time.sleep(1)
-    # except:
-    #     print("no cookies Alert")
