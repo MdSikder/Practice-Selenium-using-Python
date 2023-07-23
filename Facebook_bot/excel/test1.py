@@ -1,10 +1,17 @@
+
+import time
+from selenium import webdriver
+from bs4 import BeautifulSoup
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+
 from selenium.webdriver.common.by import By
 import openpyxl
 from openpyxl import load_workbook
 import XLutils
 from selenium import webdriver
 
-# driver = webdriver.Chrome("C:\\Users\\KloverCloud\\AppData\\Local\\Programs\\Python\\Python37-32\\chromedriver_win32\\chromedriver.exe")
+driver = webdriver.Chrome("C:\\Users\\KloverCloud\\AppData\\Local\\Programs\\Python\\Python37-32\\chromedriver_win32\\chromedriver.exe")
 # driver.get("http://newtours.demoaut.com/")
 # driver.maximize_window()
 
@@ -12,29 +19,28 @@ path = "C:\\Users\\KloverCloud\\PycharmProjects\\Practice_Selenium_Using_Python\
 path2 = "C:\\Users\\KloverCloud\\PycharmProjects\\Practice_Selenium_Using_Python\\Facebook_bot\\test.xlsx"
 # rows = XLutils.getRowCount(path, "Sheet1")
 
-workbook = openpyxl.load_workbook(path2)
+driver.get("https://www.browserstack.com/guide/mouse-hover-in-selenium")
+driver.maximize_window()
+time.sleep(5)
 
-# workbook = load_workbook(path)
-sheet = workbook.active
+actions = ActionChains(driver)
+# actions.send_keys(Keys.ENTER)
+# actions.perform()
 
-rows1 = sheet.max_row
-cols = sheet.max_column
-print(rows1)
-print(cols)
+element_to_hover_over = driver.find_elements_by_xpath("//*[@id='free-trial-link-anchor']")
+# element_to_hover_over
+time.sleep(2)
+# hover = ActionChains(driver).move_to_element(element_to_hover_over)
+# hover.perform()
+# time.sleep(5)
 
-# for r in range(1, rows1 + 1):
-#     for c in range(1, cols + 1):
-#         print(sheet.cell(row=r, column=c).value, end="  ")
+# actions = ActionChains(driver)
+# actions.move_to_element(element_to_hover_over).build().perform()
 
-for r in range(1, rows1 + 1):
-    for c in range(1, cols + 1):
-        print(sheet.cell(row=r, column=c).value)
+time.sleep(5)
 
-# for r in range(2, rows1+1):
-# for c in range(1, cols + 15):
-#     username = XLutils.readData(path, "sheet1", r, 1)
-#     print(username)
-#     # XLutils.readData(path, "Sheet1", r, 2)
-#     # search_bar = driver.find_element_by_xpath("")
-#     # search_bar.click()
-#     # search_bar.send_keys(username)
+driver.close()
+
+
+
+
