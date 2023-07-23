@@ -84,5 +84,5 @@ if __name__ == "__main__":
         name = member
         print(member)
 
-df = pd.DataFrame({'Group Members': member})
+df = pd.DataFrame({'Group Members': members})
 df.to_excel('test.xlsx', index=False)
