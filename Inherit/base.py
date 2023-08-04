@@ -4,8 +4,12 @@ import unittest
 from selenium.webdriver.chrome import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 
+path = 'C:\\Users\\KloverCloud\\AppData\\Local\\Programs\\Python\\Python37\\chromedriver\\chromedriver.exe'
 class main(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
